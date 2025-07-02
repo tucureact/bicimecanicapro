@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background-color: #f8f9fa;
             margin: 0;
             padding: 0;
             color: #333;
@@ -20,6 +20,10 @@
         .header {
             text-align: center;
             padding: 30px 0;
+            background-color: #fff;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         .logo {
             width: 150px;
@@ -30,43 +34,52 @@
             background: white;
             border-radius: 15px;
             padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
             margin-bottom: 30px;
+            border: 1px solid #e9ecef;
         }
         h1 {
-            color: #d35400;
+            color: #2d3748;
             font-size: 2.2em;
             margin-bottom: 10px;
         }
         h2 {
-            color: #2980b9;
+            color: #4a5568;
             font-size: 1.5em;
+            font-weight: 400;
         }
         .price {
             font-size: 2.5em;
-            color: #e74c3c;
+            color: #2d3748;
             font-weight: bold;
             margin: 20px 0;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #718096;
+            font-size: 1.2em;
         }
         .btn {
             display: inline-block;
             padding: 15px 30px;
             margin: 10px 5px;
-            border-radius: 50px;
+            border-radius: 8px;
             font-weight: bold;
             text-decoration: none;
             transition: all 0.3s;
             text-align: center;
             width: 80%;
-        }
-        .btn-primary {
-            background: #FF6B00;
-            color: white;
             font-size: 1.2em;
         }
+        .btn-primary {
+            background: #25D366;
+            color: white;
+            box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
         .btn-primary:hover {
-            background: #E55C00;
-            transform: scale(1.05);
+            background: #20bd5a;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
         }
         .benefits {
             text-align: left;
@@ -76,48 +89,140 @@
             margin-bottom: 15px;
             padding-left: 25px;
             position: relative;
+            color: #4a5568;
         }
         .benefit-item:before {
             content: "✓";
-            color: #27ae60;
+            color: #25D366;
             position: absolute;
             left: 0;
             font-weight: bold;
         }
-        .testimonials {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
         .urgency {
-            background: #fff8e1;
+            background: #fffaf0;
             padding: 15px;
-            border-left: 5px solid #ffc107;
+            border-left: 4px solid #f6ad55;
             margin: 20px 0;
             font-style: italic;
             text-align: center;
             font-weight: bold;
+            color: #dd6b20;
+            border-radius: 4px;
         }
         .bonus {
-            background: #e3f2fd;
+            background: #ebf8ff;
             padding: 15px;
-            border-left: 5px solid #2196f3;
+            border-left: 4px solid #4299e1;
             margin: 20px 0;
+            position: relative;
+            border-radius: 4px;
+        }
+        .bonus h3 {
+            color: #2b6cb0;
+            margin-top: 0;
+        }
+        .bonus-image {
+            width: 120px;
+            border: 3px solid #4299e1;
+            border-radius: 8px;
+            float: right;
+            margin-left: 15px;
+            margin-bottom: 10px;
         }
         .guarantee {
             text-align: center;
             padding: 20px;
-            background: #e8f5e9;
+            background: #f0fff4;
             border-radius: 10px;
             margin: 20px 0;
+            border: 1px solid #c6f6d5;
+        }
+        .guarantee h3 {
+            color: #2f855a;
         }
         .countdown {
             font-size: 1.5em;
-            color: #e74c3c;
+            color: #dd6b20;
             font-weight: bold;
             text-align: center;
             margin: 20px 0;
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        /* Estilos para testimonios estilo Facebook */
+        .testimonials {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+        .testimonials h3 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .testimonial {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #e2e8f0;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+            border: 2px solid #fff;
+        }
+        .user-name {
+            font-weight: bold;
+            color: #2b6cb0;
+            font-size: 14px;
+        }
+        .testimonial-text {
+            font-size: 14px;
+            line-height: 1.4;
+            color: #4a5568;
+            margin-left: 50px;
+        }
+        .testimonial-time {
+            font-size: 12px;
+            color: #718096;
+            margin-left: 50px;
+            margin-top: 5px;
+        }
+        .testimonial-actions {
+            display: flex;
+            margin-left: 50px;
+            margin-top: 8px;
+            font-size: 12px;
+            color: #718096;
+        }
+        .action-item {
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .action-item:hover {
+            text-decoration: underline;
+            color: #2b6cb0;
+        }
+        .action-item span {
+            color: #2b6cb0;
         }
     </style>
 </head>
@@ -128,11 +233,11 @@
                  alt="Logo del Producto" 
                  class="logo">
             <h1>¡OFERTA EXCLUSIVA POR TIEMPO LIMITADO!</h1>
-            <h2>Descubre el Secreto que Cambiará tu Vida</h2>
+            <h2>Manual Profesional de Pastillas de Freno</h2>
         </div>
 
         <div class="offer-box">
-            <div class="price">$59 <small style="font-size: 0.6em; color: #777;">antes $159</small></div>
+            <div class="price">$59 <span class="old-price">antes $159</span></div>
             
             <div class="countdown" id="countdown">
                 ⏳ La oferta termina en: 24:00:00
@@ -144,15 +249,26 @@
             
             <div class="benefits">
                 <h3>Lo que obtendrás con esta oferta:</h3>
-                <div class="benefit-item">Acceso inmediato al producto exclusivo</div>
-                <div class="benefit-item">Guía paso a paso para maximizar resultados</div>
-                <div class="benefit-item">Soporte prioritario 24/7</div>
+                <div class="benefit-item">Acceso inmediato al manual profesional</div>
+                <div class="benefit-item">Guía paso a paso para identificación de desgaste</div>
+                <div class="benefit-item">Soporte técnico especializado</div>
                 <div class="benefit-item">Actualizaciones gratuitas por 1 año</div>
             </div>
             
-            <div class="bonus">
+            <div class="bonus clearfix">
                 <h3>🔥 BONO EXTRA (Solo hoy) 🔥</h3>
-                <p>Recibirás GRATIS nuestro curso avanzado valorado en $50 al realizar tu compra ahora.</p>
+                <img src="https://i.postimg.cc/L6sH93s5/manual-de-pastillas-de-freno.png" 
+                     alt="Manual Completo de Pastillas de Freno" 
+                     class="bonus-image">
+                <p><strong>MANUAL COMPLETO DE PASTILLAS DE FRENO</strong> (Valorado en $47)</p>
+                <p>Recibirás GRATIS este manual profesional que te enseñará todo sobre:</p>
+                <ul>
+                    <li>Tipos de pastillas y sus características</li>
+                    <li>Cómo identificar desgaste</li>
+                    <li>Proceso completo de cambio</li>
+                    <li>Consejos de mantenimiento</li>
+                </ul>
+                <p style="font-weight: bold;">¡Solo para los primeros 10 compradores de hoy!</p>
             </div>
             
             <div class="guarantee">
@@ -170,14 +286,65 @@
         
         <div class="testimonials">
             <h3>Lo que dicen nuestros clientes:</h3>
-            <p>"¡Este producto cambió mi vida! En solo una semana ya veía resultados increíbles." - María G.</p>
-            <p>"La mejor inversión que he hecho. El soporte es excelente y el material es de primera calidad." - Juan P.</p>
-            <p>"No puedo creer que algo tan valioso cueste tan poco. ¡Gracias por esta oportunidad!" - Laura M.</p>
+            
+            <div class="testimonial">
+                <div class="user-info">
+                    <img src="https://i.postimg.cc/WpQMQVPb/2.jpg" alt="María González" class="user-avatar">
+                    <div class="user-name">María González</div>
+                </div>
+                <div class="testimonial-text">
+                    ¡Este manual es increíble! Como dueña de un taller pequeño, me ha ayudado a diagnosticar problemas de frenos con mucha más precisión. Mis clientes están más satisfechos y mis ingresos han aumentado un 20%.
+                </div>
+                <div class="testimonial-time">
+                    Hace 2 horas · <span style="color:#2b6cb0">Me gusta</span> · <span style="color:#2b6cb0">Responder</span>
+                </div>
+                <div class="testimonial-actions">
+                    <div class="action-item">👍 <span>12 Me gusta</span></div>
+                    <div class="action-item">✉️ <span>3 Comentarios</span></div>
+                    <div class="action-item">🔄 <span>Compartir</span></div>
+                </div>
+            </div>
+            
+            <div class="testimonial">
+                <div class="user-info">
+                    <img src="https://i.postimg.cc/qBtsbRS5/1.jpg" alt="Juan Pérez" class="user-avatar">
+                    <div class="user-name">Juan Pérez</div>
+                </div>
+                <div class="testimonial-text">
+                    Llevo 15 años como mecánico y pensaba que lo sabía todo sobre frenos. Este manual me mostró técnicas y detalles que no conocía. La sección sobre diagnóstico de ruidos es oro puro.
+                </div>
+                <div class="testimonial-time">
+                    Ayer a las 14:30 · <span style="color:#2b6cb0">Me gusta</span> · <span style="color:#2b6cb0">Responder</span>
+                </div>
+                <div class="testimonial-actions">
+                    <div class="action-item">👍 <span>24 Me gusta</span></div>
+                    <div class="action-item">✉️ <span>5 Comentarios</span></div>
+                    <div class="action-item">🔄 <span>Compartir</span></div>
+                </div>
+            </div>
+            
+            <div class="testimonial">
+                <div class="user-info">
+                    <img src="https://img.freepik.com/foto-gratis/mujer-joven-pie-cerca-ventana-casa_1301-2230.jpg" alt="Laura Martínez" class="user-avatar">
+                    <div class="user-name">Laura Martínez</div>
+                </div>
+                <div class="testimonial-text">
+                    No soy mecánica pero me gusta hacer mis propias reparaciones. Este manual me dio la confianza para cambiar mis pastillas yo misma. Las explicaciones son tan claras que cualquiera puede seguirlas.
+                </div>
+                <div class="testimonial-time">
+                    15 de julio a las 09:45 · <span style="color:#2b6cb0">Me gusta</span> · <span style="color:#2b6cb0">Responder</span>
+                </div>
+                <div class="testimonial-actions">
+                    <div class="action-item">👍 <span>8 Me gusta</span></div>
+                    <div class="action-item">✉️ <span>1 Comentario</span></div>
+                    <div class="action-item">🔄 <span>Compartir</span></div>
+                </div>
+            </div>
         </div>
         
         <div class="offer-box">
             <h2>¿Todavía tienes dudas?</h2>
-            <p>Esta es tu oportunidad de cambiar tu vida por menos de lo que cuesta una cena fuera. Cada día que pasa es un día que pierdes los beneficios que este producto puede darte.</p>
+            <p>Esta es tu oportunidad de dominar todo sobre pastillas de freno por menos de lo que cuesta una cena fuera. Cada día que pasa es un día que pierdes los beneficios que este manual puede darte.</p>
             
             <div class="urgency">
                 ⚠️ Recuerda: Esta oferta desaparecerá en <span id="countdown2">24 horas</span> y solo tenemos 10 disponibles
