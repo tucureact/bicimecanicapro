@@ -22,6 +22,14 @@
         h1 {
             color: #333;
         }
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid #25D366; /* Borde verde como WhatsApp */
+        }
         .btn {
             display: inline-block;
             margin: 10px;
@@ -40,16 +48,22 @@
         }
         .btn:hover {
             opacity: 0.8;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Logo de TikTok (imagen circular) -->
+        <img src="https://p77-sign-va.tiktokcdn.com/tos-maliva-avt-0068/59c293d25cb1fc09c140f1455ef98134~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=37d3d4db&x-expires=1751626800&x-signature=N%2F5rS1ft%2Fp%2Fh8dqpebT558yldzY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=maliva" 
+             alt="Logo" 
+             class="logo">
+
         <h1>¡Conéctate conmigo!</h1>
         <p>Haz clic en los botones para redirigirte a mis redes:</p>
         
-        <!-- Reemplaza los ENLACES por tus URLs reales -->
-        <a href="https://wa.me/5493814164525" class="btn whatsapp">WhatsApp</a>
+        <!-- Enlaces personalizados -->
+        <a href="https://wa.me/3814164525" class="btn whatsapp">WhatsApp</a>
         <a href="https://t.me/TUUSUARIOTELEGRAM" class="btn telegram">Telegram</a>
         <a href="https://instagram.com/TUUSUARIOINSTAGRAM" class="btn instagram">Instagram</a>
     </div>
